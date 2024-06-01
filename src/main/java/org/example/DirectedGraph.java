@@ -455,7 +455,7 @@ public class DirectedGraph {
         }
     }
     public static void main(String[] args) throws IOException {
-        // First Change For Git Test!
+        // Change On B2 For Git Test!
         Scanner scanner = new Scanner(System.in);
 
         String content = readFileAsString("files/1.txt");
