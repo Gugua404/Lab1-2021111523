@@ -45,6 +45,36 @@ public class DirectedGraphTest {
         String words = graph.queryBridgeWords(word1,word2);
         assertEquals("No happy or and in the graph!",words);
     }
-
+    @Test
+    public void calcShortestPathTest1() {
+        String word1 = "to";
+        String word2 = "neww";
+        String words = graph.calcShortestPath(word1, word2);
+        assertEquals("One or both of the words are not in the graph.",words);
+    }
+    @Test
+    public void calcShortestPathTest2() {
+        String word1 = "to";
+        String word2 = "out";
+        String words = graph.calcShortestPath(word1, word2);
+        assertEquals("Shortest path: to -> seek -> out\n" +
+                "Path length: 2 edges.",words);
+    }
+    @Test
+    public void calcShortestPathTest3() {
+        String word1 = "to";
+        String word2 = "new";
+        String words = graph.calcShortestPath(word1, word2);
+        assertEquals("Shortest path: to -> explore -> strange -> new\n" +
+                "Shortest path: to -> seek -> out -> new\n" +
+                "Path length: 3 edges.",words);
+    }
+    @Test
+    public void calcShortestPathTest4() {
+        String word1 = "civilizations";
+        String word2 = "to";
+        String words = graph.calcShortestPath(word1, word2);
+        assertEquals("There is no path between the two words.",words);
+    }
 
 }
